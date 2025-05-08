@@ -17,19 +17,87 @@
 
 ### a. Selección de software
 
-- Windows: ______________________
-- macOS: ________________________
-- Linux: _________________________
+- Windows: Windows: Duplicati, una herramienta gratuita y de código abierto la cual ofrece copias de
+  seguridad cifradas, comprimidas, automáticas e incrementales, con una interfaz web fácil de usar
+  y compatibilidad con almacenamiento local, en red y en la nube.
+  ● Es una herramienta gratuita y open source.
+  ● Realiza copias de seguridad cifradas y comprimidas.
+  ● Permite hacer backups automáticos e incrementales en la nube o en servidores remotos.
+  ● Cuenta con una interfaz web fácil de usar.
+  ● Es compatible con carpetas locales, discos duros externos, servidores en red y servicios
+  en la nube.
+  ● Se puede programar con gran flexibilidad (diaria, semanal, etc.).
+  <p><p>
+- macOS: macOS: Time Machine, herramienta nativa de macOS, que realiza copias de seguridad
+  automáticas e incrementales cada hora en unidades de almacenamiento externas o de red,
+  destacando por su sencillez y la capacidad de restaurar archivos individuales o el sistema
+  completo.
+  ● Es gratuito y viene preinstalado en todos los Mac.
+  ● Tiene una interfaz sencilla.
+  ● Realiza copias de seguridad incrementales automáticas cada hora.
+  ● Permite restaurar archivos individuales o el sistema completo desde una fecha específica.
+  ● Es compatible con discos duros locales o en red (Time Capsule, servidores NAS
+  compatibles).
+  ● Almacena múltiples versiones de archivos, ideal para la recuperación por error del
+  usuario.
+  <p><p>
+- Linux: Linux: rsync, es una herramienta de línea de comandos para copias de seguridad y sincronización
+  de archivos, eficiente por transferir solo los cambios. Ofrece compresión, cifrado mediante SSH,
+  sincronización bidireccional y es fácilmente programable.
+  ● Compresión: Soporta la compresión de datos durante la transferencia para reducir el uso
+  de ancho de banda.
+  ● Seguridad: Permite el cifrado con SSH para transferencias seguras.
+  ● Sincronización bidireccional: Puede mantener dos directorios sincronizados entre sí.
+  ● Programación fácil: Se puede automatizar con cron o tareas programadas.
+  ● Detección de errores: Asegura que los archivos copiados sean exactos mediante un
+  mecanismo de verificación.
+  ● Transfiere solo los cambios realizados en los archivos, lo que la hace rápida y eficiente.
+  ● Es ideal para backups locales o remotos
 
 ### b. Programación de copias
 
+Hablemos y escogeremos Duplicati, debido a que anteriormente lo he tratado. Duplicati como la
+actividad hemos comentado Duplicati es una herramienta gratuita y open source para realizar
+copias de seguridad automáticas, cifradas y comprimidas. Es compatible con múltiples
+plataformas y permite almacenar los datos en la nube o servidores remotos.
+
 - ¿Cómo se configuran las copias incrementales diarias?
+  
+  <p><p>
+  
+  Para configurar las copias incrementales diarias en Duplicati, primero debemos abrir el programa y
+  crear una nueva tarea de copia de seguridad. En la configuración de esta tarea, accederemos al
+  apartado de "Horario", donde activaremos la opción "Ejecutar automáticamente". A continuación,
+  seleccionaremos el horario en el que deseamos que se ejecute la copia, asegurándonos de elegir un
+  momento que no interfiera con el rendimiento de la red o los recursos del sistema, ya que durante la
+  ejecución de Duplicati, el uso de la CPU y el tráfico de red aumentarán. Después, en el apartado de
+  Tipo de copia de seguridad, seleccionaremos la opción Incremental para que sólo se respalden los
+  archivos modificados desde la última copia. Finalmente, configuraremos la tarea para que se ejecute
+  de manera diaria, lo que garantizará que las copias incrementales se realicen automáticamente cada
+  día sin necesidad de intervención manual.
+  
+  <p><p><p>
 - ¿Cómo se hacen las copias completas semanales?
+  
+  <p><p>
+  
+  Para programar copias completas semanales en Duplicati, primero abrimos el programa y nos
+  dirigimos a la ventana de “Horario”. Ahí, configuramos una nueva tarea de copia de seguridad,
+  seleccionando la opción Semanal. Elegimos el día de la semana en que queremos realizar la copia
+  completa, como por ejemplo, todos los domingos. Luego, definimos una hora para que se ejecute la
+  copia, preferentemente en un horario de baja actividad, como a las 2:00 AM, para minimizar el
+  impacto en el rendimiento del sistema. Nos aseguramos de seleccionar el tipo de backup como
+  Completa, para que se respalden todos los archivos, no solo los modificados. Con esta configuración,
+  las copias de seguridad completas se realizan de forma automática cada semana, asegurando que se
+  conserve una copia íntegra de todos los archivos.
 
 ### c. Destino de las copias
 
 - ¿Dónde se almacenan?
+  Las copias ISO se almacenan en un servidor central o NAS, al que se accede mediante la red local.
+  <p><p>
 - ¿Cómo se organizan las carpetas por PC?
+  Las copias se organizan en subcarpetas dentro del servidor, usando un nombre que incluye el nombre del equipo y la fecha (por ejemplo: PC-Miguel_angel-05-08), lo que permite una trazabilidad clara y ordenada.
 
 ---
 
