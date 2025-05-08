@@ -2,9 +2,14 @@
 
 ## 1. Arquitectura General del Sistema
 
-- Nivel 1: ______________________________________
-- Nivel 2: ______________________________________
-- Nivel 3: ______________________________________
+- Nivel 1: - En este primer nivel, cada equipo realizará de forma independiente una copia de seguridad de sus datos y configuraciones, utilizando su propio sistema operativo (Linux, Windows o macOS). Para ello, se podrán usar herramientas comunes como Duplicati o soluciones específicas para cada plataforma.
+  La copia de seguridad se generará en formato ISO y se almacenará en una carpeta local. Esta carpeta tendrá un nombre identificativo que incluya el nombre del equipo y la fecha en la que se ha realizado el backup, con el objetivo de mantener un orden y facilitar futuras restauraciones.
+  <p><p>
+- Nivel 2: En este segundo nivel, la carpeta generada en el nivel anterior que contiene el archivo ISO con el respaldo completo se transferirá a un servidor central, un equipo designado o un dispositivo NAS. Este repositorio centralizado almacenará las copias de seguridad de todos los equipos, organizadas en subcarpetas individuales para cada uno de las backups de los equipos, respetando la misma convención de nombres, con el fin de asegurar una correcta trazabilidad y acceso.Para aumentar la seguridad e integridad de los datos almacenados, se recomienda que el servidor central o NAS utilice una configuración de almacenamiento RAID 5. Este tipo de RAID distribuye los datos y la paridad entre varios discos, lo que permite que, en caso de fallo de uno de ellos, la información pueda recuperarse sin pérdida de datos. Así nos garantizamos una mayor tolerancia a fallos y disponibilidad del sistema de backups.
+  <p><p>
+- Nivel 3: Por último, en este tercer nivel, el repositorio central que almacena todas las copias ISO será respaldado en un sistema de almacenamiento en la nube. Este nivel está diseñado para garantizar la continuidad de la empresa ante situaciones críticas, como desastres físicos (por ejemplo, un incendio en la empresa). Al tener una copia de seguridad externa en la nube, se añade una capa adicional de seguridad y tranquilidad, asegurando que los datos puedan recuperarse incluso si los niveles anteriores se ven comprometidos.
+
+![esquema](imgs/esquema.jpg)
 
 ---
 
