@@ -94,9 +94,11 @@ plataformas y permite almacenar los datos en la nube o servidores remotos.
 ### c. Destino de las copias
 
 - ¿Dónde se almacenan?
+  <p><p>
   Las copias ISO se almacenan en un servidor central o NAS, al que se accede mediante la red local.
   <p><p>
 - ¿Cómo se organizan las carpetas por PC?
+  <p><p>
   Las copias se organizan en subcarpetas dentro del servidor, usando un nombre que incluye el nombre del equipo y la fecha (por ejemplo: PC-Miguel_angel-05-08), lo que permite una trazabilidad clara y ordenada.
 
 ---
