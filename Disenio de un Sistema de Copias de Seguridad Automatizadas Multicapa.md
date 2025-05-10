@@ -142,8 +142,18 @@ plataformas y permite almacenar los datos en la nube o servidores remotos.
 ### b. Seguridad de la sincronización
 
 - ¿Cómo se programa la sincronización?
+  
+  Se programa atreaves de servicios nativos de la nube como es Google Cloud, herramientas del sistema operativo como rsync o software de terceros especializado que nos permiten configurar tareas recurrentes con diferentes frecuencias y filtros.
+  
+  <p>
 - ¿Qué cifrado se usa?
+  
+  Las nubes principales cifran los datos en reposo osease cuando ya estan almacenados por defecto, normalmente con AES-256. También cifran los datos en tránsito osease durante la transferencia de los datos usando protocolos seguros como SSL/TLS pero tambien hay opciones adicionales para gestionar nuestras propias claves de cifrado si lo necesitasemos.
+  
+  <p>
 - ¿Se puede activar doble autenticación?
+  
+  Sí ademas de que es altamente recomendable y encima es posible activar la autenticación multifactor para las cuentas de usuario que gestionan y acceden a los recursos de almacenamiento en la nube. Esto nos añade una capa de seguridad pidiendo una segunda verificación además de la contraseña para iniciar sesión, protege el acceso a la configuración y administración, aunque la sincronización automática use métodos de autenticación de servicio diferentes.
 
 ---
 
@@ -158,7 +168,13 @@ plataformas y permite almacenar los datos en la nube o servidores remotos.
 ## 6. Justificación del uso de RAID
 
 - ¿Por qué no sustituye al backup?
+  
+  El RAID nos protege contra la pérdida de datos causada por el fallo físico de uno o varios discos duros, manteniendo la disponibilidad del sistema al distribuir o duplicar la información entre ellos pero el RAID no es una solución de copia de seguridad porque no nos protege contra la corrupción lógica de datos, el borrado accidental de archivos, los ataques de malware o ransomware que cifran o eliminan información, ni desastres que afecten al servidor completo o su ubicación física. En resumen el RAID mantiene la redundancia de los datos actuales, mientras que un backup crea una copia histórica e independiente de los datos para permitir la recuperación ante cualquier evento que no sea simplemente un fallo de disco.
+  
+  <p>
 - ¿Qué pasa si solo tenemos RAID?
+  
+  Si ocurre cualquiera de los escenarios anteriores como borrado accidental, ransomware, fallo total del servidor, etc... , perderiamos nuestros datos irremediablemente aunque el array RAID esté técnicamente "sano" o los discos individuales funcionen, los datos dentro del array se habrian borrado, corrompido o vuelto inaccesibles. El RAID no tiene "memoria" de versiones anteriores de tus archivos ni puede revertir cambios lógicos o externos; solo mantiene la estructura de datos actual redundada entre los discos.
 
 ---
 
@@ -180,5 +196,6 @@ plataformas y permite almacenar los datos en la nube o servidores remotos.
 - Fuente 1: [link software de back ups](https://www.techradar.com/best/best-backup-software)
 - Fuente 2: [mejores softwares de backup elegidos por usuarios](https://www.g2.com/categories/backup)
 - Fuente 3: [Software backups](https://en.wikipedia.org/wiki/List_of_backup_software)
-- 
+- Fuente 4: [Raid de discos duros, todo lo que necesitas saber](https://computerhoy.20minutos.es/pc/raid-beneficios-pc-1370709)
+- Fuente 5: []()
 
