@@ -128,7 +128,11 @@ plataformas y permite almacenar los datos en la nube o servidores remotos.
 ### a. Tipo de servidor remoto
 
 - Opción elegida: Nube (Google Cloud, Azure o AWS)
+  
+  <p><p>
+  
   ![nube](imgs/nube.png)
+  
 - Justificación: La nube garantiza que los datos se almacenen en una ubicación física separada del
   servidor local, lo que es crucial en caso de incidentes catastróficos (incendios,
   inundaciones, etc.).
