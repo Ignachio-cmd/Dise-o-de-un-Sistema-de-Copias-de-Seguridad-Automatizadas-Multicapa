@@ -2,7 +2,7 @@
 
 ## 1. Arquitectura General del Sistema
 
-- Nivel 1: - En este primer nivel, cada equipo realizará de forma independiente una copia de seguridad de sus datos y configuraciones, utilizando su propio sistema operativo (Linux, Windows o macOS). Para ello, se podrán usar herramientas comunes como Duplicati o soluciones específicas para cada plataforma.
+- Nivel 1: En este primer nivel, cada equipo realizará de forma independiente una copia de seguridad de sus datos y configuraciones, utilizando su propio sistema operativo (Linux, Windows o macOS). Para ello, se podrán usar herramientas comunes como Duplicati o soluciones específicas para cada plataforma.
   La copia de seguridad se generará en formato ISO y se almacenará en una carpeta local. Esta carpeta tendrá un nombre identificativo que incluya el nombre del equipo y la fecha en la que se ha realizado el backup, con el objetivo de mantener un orden y facilitar futuras restauraciones.
   <p><p>
 - Nivel 2: En este segundo nivel, la carpeta generada en el nivel anterior que contiene el archivo ISO con el respaldo completo se transferirá a un servidor central, un equipo designado o un dispositivo NAS. Este repositorio centralizado almacenará las copias de seguridad de todos los equipos, organizadas en subcarpetas individuales para cada uno de las backups de los equipos, respetando la misma convención de nombres, con el fin de asegurar una correcta trazabilidad y acceso.Para aumentar la seguridad e integridad de los datos almacenados, se recomienda que el servidor central o NAS utilice una configuración de almacenamiento RAID 5. Este tipo de RAID distribuye los datos y la paridad entre varios discos, lo que permite que, en caso de fallo de uno de ellos, la información pueda recuperarse sin pérdida de datos. Así nos garantizamos una mayor tolerancia a fallos y disponibilidad del sistema de backups.
@@ -127,8 +127,13 @@ plataformas y permite almacenar los datos en la nube o servidores remotos.
 
 ### a. Tipo de servidor remoto
 
-- Opción elegida: NAS remoto / Nube / PC remoto
-- Justificación:
+- Opción elegida: Nube (Google Cloud, Azure o AWS)
+  ![nube](imgs/nube.png)
+- Justificación: La nube garantiza que los datos se almacenen en una ubicación física separada del
+  servidor local, lo que es crucial en caso de incidentes catastróficos (incendios,
+  inundaciones, etc.).
+  Ofrece escalabilidad, alta disponibilidad y, en muchos casos, integraciones automatizadas
+  para la sincronización de datos
 
 ### b. Seguridad de la sincronización
 
