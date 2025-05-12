@@ -107,19 +107,45 @@ plataformas y permite almacenar los datos en la nube o servidores remotos.
 
 ### a. Tipo de hardware elegido
 
-- Opción: NAS / Ordenador (elige uno)
-- Marca/modelo (si aplica): ________________
-- Sistema operativo: ________________________
+- Opción: Para este caso un NAS es la elección superior y más profesional, para la mayoría de los usuarios y pequeñas empresas que buscan un destino de copia de seguridad local que sea fiable, fácil de configurar y mantener y por supuesto, eficiente en cuanto a energía.
+  Su diseño específico para el almacenamiento en red y la gestión de copias de seguridad simplifica muchísimo el uso de esta capa crítica de la estrategia de copia de seguridad.
+  
+  <p><p>
+- Marca/modelo (si aplica): **Synology DiskStation DS224+**
+  
+  <p><p>
+- Sistema operativo: Btrfs: sistema de archivos avanzado para la protección de datos. El sistema operativo Synology DiskStation Manager (DSM) que impulsa el DS224+ utiliza el sistema de archivos Btrfs avanzado, que protege sus datos contra la corrupción y permite revertir cambios no deseados o maliciosos mediante el uso de la tecnología de instantáneas.
+  
+  <p>
+  
+  ![pctochin](imgs/pctochin.png)
 
 ### b. Tipo de RAID
 
-- Elegido: RAID 1 / RAID 5 / RAID 10
-- Justificación:
+- Elegido: RAID 1
+- Justificación: Nuestra elección de RAID 1 para la configuración final para el Servidor Local Primario se basa principalmente, para este nivel crítico de almacenamiento, en la fiabilidad absoluta, la simplicidad para operar y la garantía de una recuperación exitosa y segura ante un posible fallo de disco.
+  Teniendo en cuenta que sacrificamos un poco la eficiencia de almacenamiento en comparación a RAID 5, conseguimos destacar también nuestras ventajas que son las siguientes: menor complejidad de uso, mayor velocidad y seguridad del proceso de reconstrucción y excelente rendimiento de lectura. Estas características destacables lo convierten en la opción más robusta y prudente para asegurar la copia de seguridad local esté siempre disponible y sea posible su recuperación con el mínimo riesgo.
+  Es una elección que, en general, prioriza la seguridad y la simplicidad en un componente esencial de la estrategia de recuperación de posibles desastres.
+
+Guía:
+
+* ¿Qué ventaja ofrece frente a un solo disco?
+
+La principal ventaja que destacamos de usar RAID 1 frente a un solo disco es la redundancia y la tolerancia a fallos. Si usasemos un solo disco y fallase, perderíamos todos nuestros datos e información (a menos que haya otra copia en otro lugar, que es precisamente lo que este servidor pretende ser).
+
+En cambio lo bueno que tiene el RAID es que si uno de los discos falla, los datos siguen siendo accesibles desde los discos restantes, consiguiendo que se reemplace el disco defectuoso sin perder información y reconstruir la estructura de datos(array) a su estado redundante.
 
 ### c. Software de gestión
 
-- Software elegido: __________________________
-- Función principal: __________________________
+- Software elegido: **Veeam Backup & Replication**
+- Función principal:
+  1. Instalar el software: Primero instalamos el programa en el ordenador o servidor que tiene los datos que quieres proteger la "Fuente".
+  2. Creamos una "Tarea" de Backup: Abrimos el software y le dicimos que nos interesa configurar una nueva tarea de copia de seguridad.
+  3. Iniciamos la primera Backup: Una vez configurada, podemos iniciar la primera copia manualmente para que empiece a trabajar. Las siguientes se harán solas según la programación que tenga.
+  4. Verificamos que se hacen las copias: Es importante que supervisemos periódicamente el software para asegurarnos de que las tareas se completan sin errores y que las copias se están guardando correctamente en el destino correcto.
+  5. Restauramos los datos: Si alguna vez se pierde un archivo o necesitamos volver a una versión anterior, abrimos el software, buscamos la tarea de “backup” que contiene esos datos, seleccionas los archivos o carpetas que queremos recuperar y elegimos dónde queremos que se restauren (normalmente en su ubicación original o a una nueva).
+
+
 
 ---
 
@@ -132,7 +158,6 @@ plataformas y permite almacenar los datos en la nube o servidores remotos.
   <p><p>
   
   ![nube](imgs/nube.png)
-  
 - Justificación: La nube garantiza que los datos se almacenen en una ubicación física separada del
   servidor local, lo que es crucial en caso de incidentes catastróficos (incendios,
   inundaciones, etc.).
@@ -160,8 +185,21 @@ plataformas y permite almacenar los datos en la nube o servidores remotos.
 ## 5. Automatización del Proceso
 
 - Script de verificación:
+  ![ScriptVerificacion](imgs/ScriptVeri.png)
 - Alerta por email: ¿Cómo se configura?
+  Hay varias posibilidades a la hora de configurar la alerta por email, pero nos hemos basado en una práctica que realizamos anteriormente y hemos hecho una captura del codigo que usamos en el script para que nos envie la alerta.
+  ![conf1](imgs/conf1.png)
+  ![LLegadaMails](imgs/llegada.png)
 - Prueba de restauración: ¿Cada cuánto tiempo? ¿Cómo?
+  Pruebas de Restauración a Nivel de Archivo/Carpeta: Se recomiendan hacer con bastante frecuencia basicamente cada semanalmente o mensualmente si no quieres ser tan frecuente. Son rápidas y confirman que los backups básicos de archivos están funcionando.
+  
+  <p>
+  
+  Pruebas de Restauración de Sistema Completo o Máquina Virtual: Estas son más complejas y requieren más tiempo y recursos. Se suelen realizar con una frecuencia trimestral o semestral, hablamos mas o menos de cada 3 o 6 meses.
+
+
+
+
 
 ---
 
@@ -197,5 +235,9 @@ plataformas y permite almacenar los datos en la nube o servidores remotos.
 - Fuente 2: [mejores softwares de backup elegidos por usuarios](https://www.g2.com/categories/backup)
 - Fuente 3: [Software backups](https://en.wikipedia.org/wiki/List_of_backup_software)
 - Fuente 4: [Raid de discos duros, todo lo que necesitas saber](https://computerhoy.20minutos.es/pc/raid-beneficios-pc-1370709)
-- Fuente 5: []()
+- Fuente 5: [**especificaciones en página oficial del # DiskStation DS224+**](https://www.synology.com/es-es/products/DS224+#specs)
+- Fuente 6: [Pagina oficial de Veeam Backup & Replication](https://helpcenter.veeam.com/docs/backup/vsphere/ui.html?ver=120)
+- Fuente 7: [Video tutorial de Veeam Backup & Replication](https://www.youtube.com/watch?v=tEgv9BopM1E)
+- Fuente 8: [Para elegir el raid](https://www.tecnozero.com/servidor/tipos-de-raid-cual-elegir/)
+- Fuente 9: [Para elegir el raid 2](https://www.westerndigital.com/es-es/solutions/raid#:~:text=Las%20matrices%20RAID%20reparten%20las,uno%20de%20los%20discos%20falle)
 
