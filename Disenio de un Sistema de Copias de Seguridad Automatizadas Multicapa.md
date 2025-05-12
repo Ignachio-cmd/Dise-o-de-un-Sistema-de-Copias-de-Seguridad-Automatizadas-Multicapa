@@ -237,7 +237,7 @@ En cambio lo bueno que tiene el RAID es que si uno de los discos falla, los dato
 - Fuente 2: [mejores softwares de backup elegidos por usuarios](https://www.g2.com/categories/backup)
 - Fuente 3: [Software backups](https://en.wikipedia.org/wiki/List_of_backup_software)
 - Fuente 4: [Raid de discos duros, todo lo que necesitas saber](https://computerhoy.20minutos.es/pc/raid-beneficios-pc-1370709)
-- Fuente 5: [**especificaciones en página oficial del # DiskStation DS224+**](https://www.synology.com/es-es/products/DS224+#specs)
+- Fuente 5: [especificaciones en página oficial del # DiskStation DS224+](https://www.synology.com/es-es/products/DS224+#specs)
 - Fuente 6: [Pagina oficial de Veeam Backup & Replication](https://helpcenter.veeam.com/docs/backup/vsphere/ui.html?ver=120)
 - Fuente 7: [Video tutorial de Veeam Backup & Replication](https://www.youtube.com/watch?v=tEgv9BopM1E)
 - Fuente 8: [Para elegir el raid](https://www.tecnozero.com/servidor/tipos-de-raid-cual-elegir/)
