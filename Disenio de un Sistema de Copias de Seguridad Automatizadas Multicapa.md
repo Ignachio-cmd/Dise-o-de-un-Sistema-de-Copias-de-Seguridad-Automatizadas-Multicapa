@@ -185,6 +185,7 @@ En cambio lo bueno que tiene el RAID es que si uno de los discos falla, los dato
 ## 5. Automatización del Proceso
 
 - Script de verificación:
+  
   ![ScriptVerificacion](imgs/ScriptVeri.png)
 - Alerta por email: ¿Cómo se configura?
   Hay varias posibilidades a la hora de configurar la alerta por email, pero nos hemos basado en una práctica que realizamos anteriormente y hemos hecho una captura del codigo que usamos en el script para que nos envie la alerta.
